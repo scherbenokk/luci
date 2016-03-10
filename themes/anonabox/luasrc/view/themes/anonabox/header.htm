@@ -41,7 +41,7 @@ You may obtain a copy of the License at
 			c._menu_selected = true
 		end
 	end
-    
+
     -- send as HTML5
 	http.prepare_content("text/html")
 
@@ -60,11 +60,11 @@ You may obtain a copy of the License at
 
 		local childs = disp.node_childs(node)
 		if #childs > 0 then
-        
+
             if level > 2 then
 %>
 	<ul class="tabs">
-		<%  
+		<%
             end
 
 			local selected_node
@@ -84,7 +84,7 @@ You may obtain a copy of the License at
 			</li>
 		<%      end
 			end
-            
+
             if level > 2 then
 		%>
 	</ul>
@@ -104,8 +104,9 @@ You may obtain a copy of the License at
   <!--[if lt IE 9]><script src="<%=media%>/html5.js"></script><![endif]-->
   <meta name="viewport" content="initial-scale=1.0">
   <link rel="stylesheet" href="<%=media%>/cascade.css">
+  <link rel="stylesheet" href="<%=media%>/style.css">
   <link rel="stylesheet" media="only screen and (max-device-width: 854px)" href="<%=media%>/mobile.css" type="text/css" />
-  <link rel="shortcut icon" href="<%=media%>/favicon.ico">
+  <link rel="shortcut icon" href="<%=media%>/images/favicon.ico">
   <% if node and node.css then %><link rel="stylesheet" href="<%=resource%>/<%=node.css%>">
   <% end -%>
   <% if css then %><style title="text/css">
@@ -119,7 +120,8 @@ You may obtain a copy of the License at
   <header>
    <div class="fill">
     <div class="container">
-     <a class="brand" href="#"><%=hostname%></a>
+	 <!-- <a class="brand" href="#"><%=hostname%></a> -->
+	 <a class="brand logo-padding" href="#"><img class="logo-image" src="<%=media%>/images/anonabox_logo.png" alt="Anonabox"></a>
      <ul class="nav">
 	 <%-
 		local function submenu(prefix, node)
@@ -150,7 +152,7 @@ You may obtain a copy of the License at
 				local href  = controller .. "/" .. category .. "/" .. r ..
 					(nnode.query and http.build_querystring(k.query) or "")
                 local grandchildren = disp.node_childs(nnode)
-                
+
                 if #grandchildren > 0 then
 	%>
         <li class="dropdown">
@@ -160,7 +162,7 @@ You may obtain a copy of the License at
 	<%          else %>
          <li>
 	        <a href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a>
-        </li> 
+        </li>
     <%
                 end
 			end

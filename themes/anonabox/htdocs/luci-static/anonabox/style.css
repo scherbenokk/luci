@@ -1,0 +1,9 @@
+img.logo-image{
+    height: 37px;
+    width: auto;
+}
+
+.logo-padding{
+    padding: 0px !important;
+    margin-right: 5px;
+}
