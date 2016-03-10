@@ -238,6 +238,7 @@ define theme
   LUCI_BUILD_PACKAGES += luci-theme-$(1)
 endef
 
+$(eval $(call theme,anonabox,Anonabox Theme))
 
 $(eval $(call theme,freifunk-bno,Freifunk Berlin Nordost Theme,\
 	Stefan Pirwitz <stefan-at-freifunk-bno-dot-de>))
