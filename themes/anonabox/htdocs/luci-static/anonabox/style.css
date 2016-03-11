@@ -7,3 +7,7 @@ img.logo-image{
     padding: 0px !important;
     margin-right: 5px;
 }
+
+.vypr-background{
+    background-image: url("vypr_bkg.png");
+}
